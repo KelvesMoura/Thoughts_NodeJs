@@ -8,7 +8,7 @@ const conn = require("./database/conn");
 const redisClient = require("./database/redis");
 
 const app = express();
-const port = process.env.DB_PORT_HOST;
+const port = process.env.DB_PORT_HOST || 3000;
 
 const hbs = exphbs.create({
   partialsDir: "views/partials",
@@ -21,6 +21,7 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.set("trust proxy", 1);
 
 //models
 const Thoughts = require("./models/Thought");
