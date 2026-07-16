@@ -46,7 +46,7 @@ app.use(
     rolling: false, //Garante que o cookie não irá renovar durante o uso
     store: redisStore,
     cookie: {
-      secure: false, //Alterar para false em dev, true para produção.
+      secure: true, //Alterar para false em dev, true para produção.
       maxAge: 3600000,
       sameSite: "lax",
       httpOnly: true,
