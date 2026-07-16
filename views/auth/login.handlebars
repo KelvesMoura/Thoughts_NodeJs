@@ -1,0 +1,25 @@
+<div class="content login">
+  {{> message}}
+  <form action="/login" method="POST">
+    <div class="form-control">
+      <h1>Login</h1>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Digite o seu email"
+        required
+        autofocus
+      />
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Digite a sua senha"
+        required
+      />
+      <input type="submit" value="Entrar" />
+     <p>Não tem uma conta? <a href="/register">Clique aqui!</a></p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,102 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home h1 span {
+  color: var(--yellow-color);
+}
+
+.home p:nth-last-of-type(1) {
+  margin-bottom: 10px;
+}
+
+.home p span {
+  color: var(--yellow-color);
+  font-weight: bold;
+}
+
+.home input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--white-color);
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+  width: 500px;
+}
+
+.home input[type="text"]::placeholder {
+  color: var(--white-color);
+}
+
+.home input[type="submit"] {
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--yellow-color);
+  border-radius: 5px;
+  color: var(--yellow-color);
+  font-size: 1rem;
+  padding: 10px 20px;
+  letter-spacing: 0.5px;
+}
+
+.home input[type="submit"]:hover {
+  color: var(--white-color);
+  background-color: var(--yellow-color);
+}
+
+.order-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.order-container span {
+  font-weight: bold;
+}
+
+.order-container button {
+  background-color: transparent;
+  border: none;
+  margin: 0 5px;
+}
+
+.order-container button i:hover,
+.order-container a:hover {
+  color: var(--yellow-color);
+}
+
+figure {
+  width: 615px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+figure {
+  border-bottom: 1px solid rgba(116, 113, 113, 0.76);
+}
+
+figure blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+figure figcaption {
+  margin-bottom: 10px;
+}
+
+figure figcaption span {
+  color: var(--yellow-color);
+  font-weight: 600;
+}

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root {
+  --global-font: "Roboto", sans-serif;
+  --yellow-color: #d7903f;
+  --white-color: #fff;
+  --black-color: #000;
+  --blue-color: #004085;
+  --bg-blue-color: #cce5ff;
+  --bg-color: #222222;
+  --header-height: 100px;
+  --footer-height: 100px;
+  --height-content: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white-color);
+  font-family: var(--global-font);
+}
+
+.content {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: var(--height-content);
+  background-color: var(--bg-color);
+}
+
+hr {
+  background-color: var(--yellow-color);
+  border: none;
+  height: 2px;
+}

@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: var(--header-height);
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.menu {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.menu a:hover {
+  color: var(--yellow-color);
+}

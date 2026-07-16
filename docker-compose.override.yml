@@ -1,0 +1,28 @@
+services:
+  node:
+    volumes:
+      - .:/usr/src/app # Ativa a ponte em tempo real com o VS Code
+    stdin_open: true
+    tty: true
+    command: sleep infinity
+    ports:
+      - "${DB_PORT_HOST}:${DB_PORT_HOST}"
+
+  mysql:
+    restart: always
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: ${DB_PORT}
+    ports:
+      - "${PHPMYADMIN_PORT}:80"
+    depends_on:
+      - mysql
+      - node
