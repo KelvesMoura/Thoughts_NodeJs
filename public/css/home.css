@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: clamp(50%, 700px, 90%);
 }
 
 .home h1 {
-  font-size: 3rem;
+  font-size: clamp(1.725rem, 5vw, 3rem);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .home h1 span {
@@ -17,61 +19,69 @@
   margin-bottom: 10px;
 }
 
-.home p span {
+.home p:nth-last-of-type(1) span {
   color: var(--yellow-color);
   font-weight: bold;
 }
 
-.home input[type="text"] {
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
+.home .search input[type="text"] {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--white-color);
   padding: 0.5rem;
   font-size: 1rem;
   margin-right: 1rem;
-  width: 500px;
 }
 
-.home input[type="text"]::placeholder {
+.home .search input[type="text"]::placeholder {
   color: var(--white-color);
+  font-size: clamp(14px, 2.5vw, 1rem);
 }
 
-.home input[type="submit"] {
+.home .search input[type="submit"] {
   font-weight: bold;
   background-color: transparent;
   border: 2px solid var(--yellow-color);
   border-radius: 5px;
   color: var(--yellow-color);
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   padding: 10px 20px;
   letter-spacing: 0.5px;
+  width: fit-content !important;
 }
 
-.home input[type="submit"]:hover {
+.home .search [type="submit"]:hover {
   color: var(--white-color);
   background-color: var(--yellow-color);
 }
 
-.order-container {
+.home .order-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: fit-content !important;
   margin: 20px 0;
   gap: 10px;
 }
 
 .order-container span {
   font-weight: bold;
+  min-width: fit-content !important;
 }
 
-.order-container button {
+.order-container form button {
   background-color: transparent;
   border: none;
   margin: 0 5px;
 }
 
-.order-container button i:hover,
-.order-container a:hover {
+.order-container form button i:hover,
+.order-container form a:hover {
   color: var(--yellow-color);
 }
 
@@ -88,15 +98,32 @@ figure {
 
 figure blockquote {
   font-style: italic;
-  font-size: 2rem;
+  font-size: clamp(1.15rem, 5vw, 2rem);
   margin-bottom: 0.4rem;
 }
 
 figure figcaption {
   margin-bottom: 10px;
+  font-size: clamp(14px, 2.5vw, 1rem);
 }
 
 figure figcaption span {
   color: var(--yellow-color);
   font-weight: 600;
+}
+
+@media only screen and (max-width: 325px) {
+  .home .search {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .home .search input[type="submit"] {
+    width: auto !important;
+  }
+
+  .order-container {
+    flex-direction: column;
+  }
 }

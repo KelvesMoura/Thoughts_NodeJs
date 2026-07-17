@@ -15,26 +15,36 @@
 }
 
 *,
+html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100% !important;
   color: var(--white-color);
   font-family: var(--global-font);
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content {
-  width: 100%;
-  padding: 40px;
+  /* width: 100%; */
+  padding: clamp(20px, 5vw, 40px) 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: var(--height-content);
-  background-color: var(--bg-color);
 }
 
 hr {
   background-color: var(--yellow-color);
   border: none;
   height: 2px;
+  width: 100%;
 }

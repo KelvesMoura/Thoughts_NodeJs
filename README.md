@@ -30,7 +30,7 @@ A full-stack **Node.js** application built to demonstrate a complete backend aut
 - [Docker & Environment Setup](#docker--environment-setup)
 - [Environment Variables](#environment-variables)
 - [Getting Started](#getting-started)
-- [📱 Known Limitation & Planned Improvement](#-known-limitation--planned-improvement)
+- [Responsiveness](#-responsiveness)
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
 
@@ -280,11 +280,11 @@ docker compose -f docker-compose.yml -f docker-compose-prod.yml up --build -d
 ```
 
 ---
-
-## 📱 Known Limitation & Planned Improvement
-
-**Responsiveness has not been implemented yet.** The project's primary goal was to demonstrate backend mechanics — authentication, hashed passwords, Redis-backed sessions, and protected routes — rather than front-end polish. As a planned next step, the UI (currently styled for desktop viewports) should be adapted with responsive layouts (media queries / fluid units) to properly support mobile and tablet screens.
-
+ 
+## Responsiveness
+ 
+The project's primary goal was to demonstrate backend mechanics — authentication, hashed passwords, Redis-backed sessions, and protected routes — rather than front-end polish, so the UI was originally built for desktop viewports only. **Responsive layouts for mobile and tablet screens have since been implemented** via CSS media queries across `dashboard.css`, `header.css`, and `home.css`, adapting the dashboard, header/navigation, and home search layout for smaller screens.
+ 
 ---
 
 ## Acknowledgments

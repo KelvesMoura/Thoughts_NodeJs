@@ -10,6 +10,7 @@
   border-left: 4px solid var(--yellow-color);
   padding-left: 5px;
   align-self: flex-start;
+  font-size: clamp(1.725rem, 5vw, 3rem);
 }
 
 .empty-alert {
@@ -53,7 +54,9 @@
   align-self: center;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  max-width: fit-content !important;
+  text-align: center;
   letter-spacing: 1px;
   border: 2px solid var(--yellow-color);
   color: var(--yellow-color);
@@ -78,6 +81,8 @@ ul {
 ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
   border-bottom: 1px solid var(--yellow-color);
   padding: 20px;
 }
@@ -85,19 +90,28 @@ ul li {
 .actions {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
   gap: 10px;
 }
 
+.actions form {
+  max-width: fit-content !important;
+}
+
 .actions .edit,
-.actions input[type="submit"] {
+.actions form input[type="submit"] {
   background-color: transparent;
   font-size: 1rem;
   border: 2px solid var(--white-color);
-  padding: 10px 20px;
+  padding: clamp(5px, 2vw, 10px) 20px;
   border-radius: 5px;
   font-weight: bold;
   letter-spacing: 0.3px;
+  width: fit-content !important;
+  text-decoration: none;
+  text-align: center;
 }
 
 .actions input[type="submit"]:hover,
@@ -107,29 +121,27 @@ ul li {
   background-color: transparent;
 }
 
-.actions .edit {
-  text-decoration: none;
-}
-
 .label {
   color: var(--yellow-color);
   font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .create a,
 .edit a {
   color: var(--yellow-color);
   font-weight: 500;
+  font-size: 1.15rem;
 }
 
-.create .form-control input[type="submit"],
+.create form .form-control input[type="submit"],
 .edit .form-control input[type="submit"] {
   color: var(--yellow-color);
   margin: 20px 0;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.5px;
-  width: fit-content;
+  width: fit-content !important;
 }
 
 .create .form-control input[type="submit"]:hover,
@@ -138,8 +150,28 @@ ul li {
   background-color: var(--yellow-color);
   color: var(--white-color);
 }
+.create form .form-control input[type="text"],
+.edit form .form-control input[type="text"] {
+  width: clamp(50%, 700px, 100%) !important;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+}
 
 .create .form-control label:nth-of-type(1),
 .edit .form-control label:nth-of-type(1) {
   margin: 1rem 0;
+}
+
+@media only screen and (max-width: 425px) {
+  .dashboard-line {
+    flex-direction: row;
+  }
+
+  .actions {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  ul li {
+    flex-direction: column;
+  }
 }

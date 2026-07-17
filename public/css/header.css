@@ -10,23 +10,63 @@
 }
 
 .logo img {
-  width: 60px;
+  max-width: clamp(40px, 10vw, 60px);
   height: auto;
 }
 
 .menu {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-end;
+  max-width: fit-content;
   gap: 20px;
 }
 
 .menu a {
+  text-align: right;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.25rem;
   letter-spacing: 1px;
 }
 
+.menu button {
+  visibility: hidden;
+  border: none;
+}
+
 .menu a:hover {
   color: var(--yellow-color);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc((var(--header-height)) + 5px);
+  right: 0;
+  height: calc((var(--height-content)) - 5px);
+  width: 100%;
+  border: none;
+  padding: 20px;
+}
+
+.dropdown:popover-open {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dropdown a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 425px) {
+  .menu a {
+    display: none;
+  }
+
+  .menu i {
+    visibility: visible;
+    font-size: 2rem;
+  }
 }

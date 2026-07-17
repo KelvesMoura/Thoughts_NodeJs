@@ -3,9 +3,9 @@
   flex-direction: row;
   justify-content: center !important;
   align-items: center !important;
-  width: 100%;
   min-height: var(--footer-height);
   background-color: var(--bg-color);
+  text-align: center;
 }
 
 .brand {
@@ -16,5 +16,5 @@
 
 .footer p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }

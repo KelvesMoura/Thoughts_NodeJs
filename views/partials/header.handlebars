@@ -1,8 +1,21 @@
 <nav class="navbar">
   <div class="logo">
-    <img src="/assets/images/logo.webp" alt="Logo" />
+    <a href="/"><img src="/assets/images/logo.webp" alt="Logo" /></a>
   </div>
   <div class="menu">
+    <button commandFor="dropdown" command="toggle-popover">
+      <i class="bi bi-list"></i>
+    </button>
+    <a href="/">Pensamentos</a>
+    {{#if session.userid}}
+      <a href="/thoughts/dashboard">Dashboard</a>
+      <a href="/logout">Sair</a>
+    {{else}}
+      <a href="/login">Entrar</a>
+      <a href="/register">Registrar</a>
+    {{/if}}
+  </div>
+  <div class="dropdown" id="dropdown" popover>
     <a href="/">Pensamentos</a>
     {{#if session.userid}}
       <a href="/thoughts/dashboard">Dashboard</a>
