@@ -9,7 +9,7 @@ const { RedisStore } = require("connect-redis");
 const redisClient = require("./src/database/redis");
 
 const app = express();
-const port = process.env.DB_PORT_HOST || 3000;
+const port = process.env.PORT_HOST || 3000;
 const viewPath = path.join(__dirname, "src", "views");
 const viewPartial = path.join(__dirname, "src", "views", "partials");
 

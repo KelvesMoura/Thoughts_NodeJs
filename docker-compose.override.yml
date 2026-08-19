@@ -6,12 +6,12 @@ services:
     tty: true
     command: sleep infinity
     ports:
-      - "${DB_PORT_HOST}:${DB_PORT_HOST}"
+      - "${PORT_HOST}:3000"
 
   mysql:
     restart: always
     ports:
-      - "${DB_PORT}:${DB_PORT}"
+      - "${DB_PORT}:3306"
 
   # phpMyAdmin
   phpmyadmin:
